@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PL-300 Practice Quiz (With Score)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            font-size: 1.5em;
+            padding: 10px;
+        }
+        .question {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .choices {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .choices li {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        .explanation {
+            font-style: italic;
+            color: #555;
+            margin-top: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            margin-top: 10px;
+            font-size: 1em;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: none;
+            background-color: #0078d4;
+            color: white;
+        }
+        button:hover {
+            background-color: #005ea6;
+        }
+        #score-summary {
+            background: #e0ffe0;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>PL-300 Practice Quiz</h1>
+    
+    <div class="question" id="question0">
+        <strong>Question 1:</strong> You load a CSV file where the first five rows are metadata. How should you prepare it for use in Power BI?
+        <ul class="choices" id="choices0">
+            <li><label><input type="radio" name="q0" value="Keep all rows"> Keep all rows</label></li><li><label><input type="radio" name="q0" value="Promote Headers directly"> Promote Headers directly</label></li><li><label><input type="radio" name="q0" value="Remove Top Rows then Promote Headers"> Remove Top Rows then Promote Headers</label></li><li><label><input type="radio" name="q0" value="Transpose table"> Transpose table</label></li>
+        </ul>
+        <button class="submit-btn" data-question="0" data-answer="Remove Top Rows then Promote Headers">Submit</button>
+        <div id="answer0" class="hidden">
+            <div class="correct">Correct Answer: Remove Top Rows then Promote Headers</div>
+            <div class="explanation">You must first remove the non-header metadata rows, then promote the correct row as headers.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question1">
+        <strong>Question 2:</strong> You are loading a folder of Excel files with similar structures into Power BI. What’s the best way to combine them?
+        <ul class="choices" id="choices1">
+            <li><label><input type="radio" name="q1" value="Load them individually"> Load them individually</label></li><li><label><input type="radio" name="q1" value="Use Merge Queries"> Use Merge Queries</label></li><li><label><input type="radio" name="q1" value="Use Append Queries"> Use Append Queries</label></li><li><label><input type="radio" name="q1" value="Use Combine Files in Power Query"> Use Combine Files in Power Query</label></li>
+        </ul>
+        <button class="submit-btn" data-question="1" data-answer="Use Combine Files in Power Query">Submit</button>
+        <div id="answer1" class="hidden">
+            <div class="correct">Correct Answer: Use Combine Files in Power Query</div>
+            <div class="explanation">The Combine Files function automatically handles similar structured files from a folder.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question2">
+        <strong>Question 3:</strong> You need to create a new column that splits full names into first and last. What should you use?
+        <ul class="choices" id="choices2">
+            <li><label><input type="radio" name="q2" value="Split Column by Delimiter"> Split Column by Delimiter</label></li><li><label><input type="radio" name="q2" value="Merge Queries"> Merge Queries</label></li><li><label><input type="radio" name="q2" value="Group By"> Group By</label></li><li><label><input type="radio" name="q2" value="Duplicate Column"> Duplicate Column</label></li>
+        </ul>
+        <button class="submit-btn" data-question="2" data-answer="Split Column by Delimiter">Submit</button>
+        <div id="answer2" class="hidden">
+            <div class="correct">Correct Answer: Split Column by Delimiter</div>
+            <div class="explanation">Splitting columns by a space or comma is ideal for dividing full names.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question3">
+        <strong>Question 4:</strong> Which transformation ensures that Power BI recognizes dates correctly in a column?
+        <ul class="choices" id="choices3">
+            <li><label><input type="radio" name="q3" value="Detect Data Type"> Detect Data Type</label></li><li><label><input type="radio" name="q3" value="Change Type to Date"> Change Type to Date</label></li><li><label><input type="radio" name="q3" value="Replace Errors"> Replace Errors</label></li><li><label><input type="radio" name="q3" value="Remove Duplicates"> Remove Duplicates</label></li>
+        </ul>
+        <button class="submit-btn" data-question="3" data-answer="Change Type to Date">Submit</button>
+        <div id="answer3" class="hidden">
+            <div class="correct">Correct Answer: Change Type to Date</div>
+            <div class="explanation">To work with time intelligence, Power BI must recognize columns as type &#x27;Date&#x27;.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question4">
+        <strong>Question 5:</strong> You want to exclude rows where &#x27;Status&#x27; is null. What’s the fastest step in Power Query?
+        <ul class="choices" id="choices4">
+            <li><label><input type="radio" name="q4" value="Sort ascending"> Sort ascending</label></li><li><label><input type="radio" name="q4" value="Filter to remove nulls"> Filter to remove nulls</label></li><li><label><input type="radio" name="q4" value="Group by &#x27;Status&#x27;"> Group by &#x27;Status&#x27;</label></li><li><label><input type="radio" name="q4" value="Use Remove Columns"> Use Remove Columns</label></li>
+        </ul>
+        <button class="submit-btn" data-question="4" data-answer="Filter to remove nulls">Submit</button>
+        <div id="answer4" class="hidden">
+            <div class="correct">Correct Answer: Filter to remove nulls</div>
+            <div class="explanation">Filtering null values in a column is the most direct way to exclude unwanted rows.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question5">
+        <strong>Question 6:</strong> Which feature in Power BI enables combining columns from two tables based on a common key?
+        <ul class="choices" id="choices5">
+            <li><label><input type="radio" name="q5" value="Append Queries"> Append Queries</label></li><li><label><input type="radio" name="q5" value="Merge Queries"> Merge Queries</label></li><li><label><input type="radio" name="q5" value="Group By"> Group By</label></li><li><label><input type="radio" name="q5" value="Duplicate Queries"> Duplicate Queries</label></li>
+        </ul>
+        <button class="submit-btn" data-question="5" data-answer="Merge Queries">Submit</button>
+        <div id="answer5" class="hidden">
+            <div class="correct">Correct Answer: Merge Queries</div>
+            <div class="explanation">Merging is used to join data based on a shared column key (like SQL JOIN).</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question6">
+        <strong>Question 7:</strong> You need to clean text values in a column with extra spaces. What’s your go-to step?
+        <ul class="choices" id="choices6">
+            <li><label><input type="radio" name="q6" value="Split Column"> Split Column</label></li><li><label><input type="radio" name="q6" value="Trim"> Trim</label></li><li><label><input type="radio" name="q6" value="Group By"> Group By</label></li><li><label><input type="radio" name="q6" value="Format as Table"> Format as Table</label></li>
+        </ul>
+        <button class="submit-btn" data-question="6" data-answer="Trim">Submit</button>
+        <div id="answer6" class="hidden">
+            <div class="correct">Correct Answer: Trim</div>
+            <div class="explanation">Trim removes leading and trailing whitespace, a common cleaning operation.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question7">
+        <strong>Question 8:</strong> Which step is typically needed before pivoting a column in Power Query?
+        <ul class="choices" id="choices7">
+            <li><label><input type="radio" name="q7" value="Group By"> Group By</label></li><li><label><input type="radio" name="q7" value="Remove Columns"> Remove Columns</label></li><li><label><input type="radio" name="q7" value="Unpivot Columns"> Unpivot Columns</label></li><li><label><input type="radio" name="q7" value="Duplicate Column"> Duplicate Column</label></li>
+        </ul>
+        <button class="submit-btn" data-question="7" data-answer="Unpivot Columns">Submit</button>
+        <div id="answer7" class="hidden">
+            <div class="correct">Correct Answer: Unpivot Columns</div>
+            <div class="explanation">Unpivoting flattens data into attribute-value pairs before pivoting or aggregating.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question8">
+        <strong>Question 9:</strong> Which Power Query operation combines two tables with identical column structures?
+        <ul class="choices" id="choices8">
+            <li><label><input type="radio" name="q8" value="Merge Queries"> Merge Queries</label></li><li><label><input type="radio" name="q8" value="Append Queries"> Append Queries</label></li><li><label><input type="radio" name="q8" value="Duplicate Queries"> Duplicate Queries</label></li><li><label><input type="radio" name="q8" value="Transpose"> Transpose</label></li>
+        </ul>
+        <button class="submit-btn" data-question="8" data-answer="Append Queries">Submit</button>
+        <div id="answer8" class="hidden">
+            <div class="correct">Correct Answer: Append Queries</div>
+            <div class="explanation">Appending stacks data vertically when column names and types match.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question9">
+        <strong>Question 10:</strong> What does Power BI automatically create when loading tables from Excel?
+        <ul class="choices" id="choices9">
+            <li><label><input type="radio" name="q9" value="Hierarchies"> Hierarchies</label></li><li><label><input type="radio" name="q9" value="Calculated Columns"> Calculated Columns</label></li><li><label><input type="radio" name="q9" value="Queries and Steps"> Queries and Steps</label></li><li><label><input type="radio" name="q9" value="Relationships (when possible)"> Relationships (when possible)</label></li>
+        </ul>
+        <button class="submit-btn" data-question="9" data-answer="Relationships (when possible)">Submit</button>
+        <div id="answer9" class="hidden">
+            <div class="correct">Correct Answer: Relationships (when possible)</div>
+            <div class="explanation">Power BI detects and creates relationships based on column name matches and data patterns.</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question10">
+        <strong>Question 11:</strong> You need to calculate total revenue ignoring filters on product category.
+        <ul class="choices" id="choices10">
+            <li><label><input type="radio" name="q10" value="SUM(Sales[Revenue])"> SUM(Sales[Revenue])</label></li><li><label><input type="radio" name="q10" value="CALCULATE(SUM(Sales[Revenue]), Product[Category])"> CALCULATE(SUM(Sales[Revenue]), Product[Category])</label></li><li><label><input type="radio" name="q10" value="SUMX(Sales, Sales[Revenue])"> SUMX(Sales, Sales[Revenue])</label></li><li><label><input type="radio" name="q10" value="CALCULATE(SUM(Sales[Revenue]), ALL(Product[Category]))"> CALCULATE(SUM(Sales[Revenue]), ALL(Product[Category]))</label></li>
+        </ul>
+        <button class="submit-btn" data-question="10" data-answer="CALCULATE(SUM(Sales[Revenue]), ALL(Product[Category]))">Submit</button>
+        <div id="answer10" class="hidden">
+            <div class="correct">Correct Answer: CALCULATE(SUM(Sales[Revenue]), ALL(Product[Category]))</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;You need to calculate total revenue ignoring filters on product category.&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question11">
+        <strong>Question 12:</strong> You have inactive relationship between Date and Orders. What function enables its use in a measure?
+        <ul class="choices" id="choices11">
+            <li><label><input type="radio" name="q11" value="RELATED"> RELATED</label></li><li><label><input type="radio" name="q11" value="CROSSFILTER"> CROSSFILTER</label></li><li><label><input type="radio" name="q11" value="USERELATIONSHIP"> USERELATIONSHIP</label></li><li><label><input type="radio" name="q11" value="RELATE"> RELATE</label></li>
+        </ul>
+        <button class="submit-btn" data-question="11" data-answer="USERELATIONSHIP">Submit</button>
+        <div id="answer11" class="hidden">
+            <div class="correct">Correct Answer: USERELATIONSHIP</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;You have inactive relationship between Date and Orders. What function enables its use in a measure?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question12">
+        <strong>Question 13:</strong> Which data type is best for a unique transaction ID column?
+        <ul class="choices" id="choices12">
+            <li><label><input type="radio" name="q12" value="Date"> Date</label></li><li><label><input type="radio" name="q12" value="Decimal Number"> Decimal Number</label></li><li><label><input type="radio" name="q12" value="Text"> Text</label></li><li><label><input type="radio" name="q12" value="Whole Number"> Whole Number</label></li>
+        </ul>
+        <button class="submit-btn" data-question="12" data-answer="Text">Submit</button>
+        <div id="answer12" class="hidden">
+            <div class="correct">Correct Answer: Text</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which data type is best for a unique transaction ID column?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question13">
+        <strong>Question 14:</strong> Which DAX function returns a column from a related table?
+        <ul class="choices" id="choices13">
+            <li><label><input type="radio" name="q13" value="VALUES"> VALUES</label></li><li><label><input type="radio" name="q13" value="CALCULATE"> CALCULATE</label></li><li><label><input type="radio" name="q13" value="RELATED"> RELATED</label></li><li><label><input type="radio" name="q13" value="SUMMARIZE"> SUMMARIZE</label></li>
+        </ul>
+        <button class="submit-btn" data-question="13" data-answer="RELATED">Submit</button>
+        <div id="answer13" class="hidden">
+            <div class="correct">Correct Answer: RELATED</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which DAX function returns a column from a related table?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question14">
+        <strong>Question 15:</strong> Which DAX function returns a table related to the current row context?
+        <ul class="choices" id="choices14">
+            <li><label><input type="radio" name="q14" value="RELATEDTABLE"> RELATEDTABLE</label></li><li><label><input type="radio" name="q14" value="FILTER"> FILTER</label></li><li><label><input type="radio" name="q14" value="CALCULATE"> CALCULATE</label></li><li><label><input type="radio" name="q14" value="SELECTCOLUMNS"> SELECTCOLUMNS</label></li>
+        </ul>
+        <button class="submit-btn" data-question="14" data-answer="RELATEDTABLE">Submit</button>
+        <div id="answer14" class="hidden">
+            <div class="correct">Correct Answer: RELATEDTABLE</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which DAX function returns a table related to the current row context?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question15">
+        <strong>Question 16:</strong> Which visual is ideal to show sales trend over time?
+        <ul class="choices" id="choices15">
+            <li><label><input type="radio" name="q15" value="Donut Chart"> Donut Chart</label></li><li><label><input type="radio" name="q15" value="Pie Chart"> Pie Chart</label></li><li><label><input type="radio" name="q15" value="Line Chart"> Line Chart</label></li><li><label><input type="radio" name="q15" value="Bar Chart"> Bar Chart</label></li>
+        </ul>
+        <button class="submit-btn" data-question="15" data-answer="Line Chart">Submit</button>
+        <div id="answer15" class="hidden">
+            <div class="correct">Correct Answer: Line Chart</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which visual is ideal to show sales trend over time?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question16">
+        <strong>Question 17:</strong> What type of slicer lets users select multiple items?
+        <ul class="choices" id="choices16">
+            <li><label><input type="radio" name="q16" value="Single-select slicer"> Single-select slicer</label></li><li><label><input type="radio" name="q16" value="Date slicer"> Date slicer</label></li><li><label><input type="radio" name="q16" value="List slicer with multi-select enabled"> List slicer with multi-select enabled</label></li><li><label><input type="radio" name="q16" value="Dropdown slicer"> Dropdown slicer</label></li>
+        </ul>
+        <button class="submit-btn" data-question="16" data-answer="List slicer with multi-select enabled">Submit</button>
+        <div id="answer16" class="hidden">
+            <div class="correct">Correct Answer: List slicer with multi-select enabled</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What type of slicer lets users select multiple items?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question17">
+        <strong>Question 18:</strong> What feature allows users to right-click and jump to another page filtered by a field?
+        <ul class="choices" id="choices17">
+            <li><label><input type="radio" name="q17" value="Bookmark"> Bookmark</label></li><li><label><input type="radio" name="q17" value="Tooltip"> Tooltip</label></li><li><label><input type="radio" name="q17" value="Drilldown"> Drilldown</label></li><li><label><input type="radio" name="q17" value="Drillthrough"> Drillthrough</label></li>
+        </ul>
+        <button class="submit-btn" data-question="17" data-answer="Drillthrough">Submit</button>
+        <div id="answer17" class="hidden">
+            <div class="correct">Correct Answer: Drillthrough</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What feature allows users to right-click and jump to another page filtered by a field?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question18">
+        <strong>Question 19:</strong> What feature lets you toggle visuals based on a user&#x27;s selection?
+        <ul class="choices" id="choices18">
+            <li><label><input type="radio" name="q18" value="Drillthrough"> Drillthrough</label></li><li><label><input type="radio" name="q18" value="Tooltips"> Tooltips</label></li><li><label><input type="radio" name="q18" value="Bookmarks"> Bookmarks</label></li><li><label><input type="radio" name="q18" value="Filters"> Filters</label></li>
+        </ul>
+        <button class="submit-btn" data-question="18" data-answer="Bookmarks">Submit</button>
+        <div id="answer18" class="hidden">
+            <div class="correct">Correct Answer: Bookmarks</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What feature lets you toggle visuals based on a user&#x27;s selection?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question19">
+        <strong>Question 20:</strong> What visual shows contributions to a total and allows drill into details?
+        <ul class="choices" id="choices19">
+            <li><label><input type="radio" name="q19" value="Stacked Bar"> Stacked Bar</label></li><li><label><input type="radio" name="q19" value="Matrix"> Matrix</label></li><li><label><input type="radio" name="q19" value="KPI"> KPI</label></li><li><label><input type="radio" name="q19" value="Decomposition Tree"> Decomposition Tree</label></li>
+        </ul>
+        <button class="submit-btn" data-question="19" data-answer="Decomposition Tree">Submit</button>
+        <div id="answer19" class="hidden">
+            <div class="correct">Correct Answer: Decomposition Tree</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What visual shows contributions to a total and allows drill into details?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question20">
+        <strong>Question 21:</strong> What Power BI visual lets users type natural language questions?
+        <ul class="choices" id="choices20">
+            <li><label><input type="radio" name="q20" value="Q&amp;A"> Q&amp;A</label></li><li><label><input type="radio" name="q20" value="Gauge"> Gauge</label></li><li><label><input type="radio" name="q20" value="KPI"> KPI</label></li><li><label><input type="radio" name="q20" value="Table"> Table</label></li>
+        </ul>
+        <button class="submit-btn" data-question="20" data-answer="Q&amp;A">Submit</button>
+        <div id="answer20" class="hidden">
+            <div class="correct">Correct Answer: Q&amp;A</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What Power BI visual lets users type natural language questions?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question21">
+        <strong>Question 22:</strong> Which visual helps identify patterns between variables, like sales and marketing spend?
+        <ul class="choices" id="choices21">
+            <li><label><input type="radio" name="q21" value="Scatter Plot"> Scatter Plot</label></li><li><label><input type="radio" name="q21" value="Waterfall"> Waterfall</label></li><li><label><input type="radio" name="q21" value="Line Chart"> Line Chart</label></li><li><label><input type="radio" name="q21" value="Card"> Card</label></li>
+        </ul>
+        <button class="submit-btn" data-question="21" data-answer="Scatter Plot">Submit</button>
+        <div id="answer21" class="hidden">
+            <div class="correct">Correct Answer: Scatter Plot</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which visual helps identify patterns between variables, like sales and marketing spend?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question22">
+        <strong>Question 23:</strong> Which analytic feature forecasts future values based on a time series?
+        <ul class="choices" id="choices22">
+            <li><label><input type="radio" name="q22" value="Forecast"> Forecast</label></li><li><label><input type="radio" name="q22" value="Grouping"> Grouping</label></li><li><label><input type="radio" name="q22" value="Trend line"> Trend line</label></li><li><label><input type="radio" name="q22" value="Anomaly detection"> Anomaly detection</label></li>
+        </ul>
+        <button class="submit-btn" data-question="22" data-answer="Forecast">Submit</button>
+        <div id="answer22" class="hidden">
+            <div class="correct">Correct Answer: Forecast</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which analytic feature forecasts future values based on a time series?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question23">
+        <strong>Question 24:</strong> What feature can detect outliers and patterns automatically in Power BI?
+        <ul class="choices" id="choices23">
+            <li><label><input type="radio" name="q23" value="Cluster analysis"> Cluster analysis</label></li><li><label><input type="radio" name="q23" value="Anomaly detection"> Anomaly detection</label></li><li><label><input type="radio" name="q23" value="Drillthrough"> Drillthrough</label></li><li><label><input type="radio" name="q23" value="Forecast"> Forecast</label></li>
+        </ul>
+        <button class="submit-btn" data-question="23" data-answer="Anomaly detection">Submit</button>
+        <div id="answer23" class="hidden">
+            <div class="correct">Correct Answer: Anomaly detection</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What feature can detect outliers and patterns automatically in Power BI?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question24">
+        <strong>Question 25:</strong> How do you refresh data in Power BI Service from an on-premises SQL database?
+        <ul class="choices" id="choices24">
+            <li><label><input type="radio" name="q24" value="Create RLS"> Create RLS</label></li><li><label><input type="radio" name="q24" value="Install and configure a gateway"> Install and configure a gateway</label></li><li><label><input type="radio" name="q24" value="Publish to web"> Publish to web</label></li><li><label><input type="radio" name="q24" value="Enable Q&amp;A"> Enable Q&amp;A</label></li>
+        </ul>
+        <button class="submit-btn" data-question="24" data-answer="Install and configure a gateway">Submit</button>
+        <div id="answer24" class="hidden">
+            <div class="correct">Correct Answer: Install and configure a gateway</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;How do you refresh data in Power BI Service from an on-premises SQL database?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question25">
+        <strong>Question 26:</strong> Where do you configure scheduled refresh for a dataset?
+        <ul class="choices" id="choices25">
+            <li><label><input type="radio" name="q25" value="Navigation pane"> Navigation pane</label></li><li><label><input type="radio" name="q25" value="Dataset settings in Power BI Service"> Dataset settings in Power BI Service</label></li><li><label><input type="radio" name="q25" value="Model view"> Model view</label></li><li><label><input type="radio" name="q25" value="Report page"> Report page</label></li>
+        </ul>
+        <button class="submit-btn" data-question="25" data-answer="Dataset settings in Power BI Service">Submit</button>
+        <div id="answer25" class="hidden">
+            <div class="correct">Correct Answer: Dataset settings in Power BI Service</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Where do you configure scheduled refresh for a dataset?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question26">
+        <strong>Question 27:</strong> What permission allows a user to share dashboards with others?
+        <ul class="choices" id="choices26">
+            <li><label><input type="radio" name="q26" value="View-only access"> View-only access</label></li><li><label><input type="radio" name="q26" value="Contributor role"> Contributor role</label></li><li><label><input type="radio" name="q26" value="Admin access"> Admin access</label></li><li><label><input type="radio" name="q26" value="Build permission on dataset + workspace access"> Build permission on dataset + workspace access</label></li>
+        </ul>
+        <button class="submit-btn" data-question="26" data-answer="Build permission on dataset + workspace access">Submit</button>
+        <div id="answer26" class="hidden">
+            <div class="correct">Correct Answer: Build permission on dataset + workspace access</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What permission allows a user to share dashboards with others?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question27">
+        <strong>Question 28:</strong> How can you limit which rows users see based on login credentials?
+        <ul class="choices" id="choices27">
+            <li><label><input type="radio" name="q27" value="Tooltip"> Tooltip</label></li><li><label><input type="radio" name="q27" value="Workspace roles"> Workspace roles</label></li><li><label><input type="radio" name="q27" value="Row-Level Security"> Row-Level Security</label></li><li><label><input type="radio" name="q27" value="Drillthrough"> Drillthrough</label></li>
+        </ul>
+        <button class="submit-btn" data-question="27" data-answer="Row-Level Security">Submit</button>
+        <div id="answer27" class="hidden">
+            <div class="correct">Correct Answer: Row-Level Security</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;How can you limit which rows users see based on login credentials?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question28">
+        <strong>Question 29:</strong> Where do you publish Power BI reports from Desktop?
+        <ul class="choices" id="choices28">
+            <li><label><input type="radio" name="q28" value="Teams channel"> Teams channel</label></li><li><label><input type="radio" name="q28" value="Power BI Workspace"> Power BI Workspace</label></li><li><label><input type="radio" name="q28" value="Excel"> Excel</label></li><li><label><input type="radio" name="q28" value="PowerPoint"> PowerPoint</label></li>
+        </ul>
+        <button class="submit-btn" data-question="28" data-answer="Power BI Workspace">Submit</button>
+        <div id="answer28" class="hidden">
+            <div class="correct">Correct Answer: Power BI Workspace</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Where do you publish Power BI reports from Desktop?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question29">
+        <strong>Question 30:</strong> What happens when you republish a PBIX file to a workspace?
+        <ul class="choices" id="choices29">
+            <li><label><input type="radio" name="q29" value="The dataset and report are replaced"> The dataset and report are replaced</label></li><li><label><input type="radio" name="q29" value="Only visuals update"> Only visuals update</label></li><li><label><input type="radio" name="q29" value="A copy is saved"> A copy is saved</label></li><li><label><input type="radio" name="q29" value="It appends to workspace"> It appends to workspace</label></li>
+        </ul>
+        <button class="submit-btn" data-question="29" data-answer="The dataset and report are replaced">Submit</button>
+        <div id="answer29" class="hidden">
+            <div class="correct">Correct Answer: The dataset and report are replaced</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What happens when you republish a PBIX file to a workspace?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question30">
+        <strong>Question 31:</strong> Which tool allows deployment pipelines in Power BI?
+        <ul class="choices" id="choices30">
+            <li><label><input type="radio" name="q30" value="Paginated reports"> Paginated reports</label></li><li><label><input type="radio" name="q30" value="Goals"> Goals</label></li><li><label><input type="radio" name="q30" value="Power Automate"> Power Automate</label></li><li><label><input type="radio" name="q30" value="Deployment Pipelines (Premium)"> Deployment Pipelines (Premium)</label></li>
+        </ul>
+        <button class="submit-btn" data-question="30" data-answer="Deployment Pipelines (Premium)">Submit</button>
+        <div id="answer30" class="hidden">
+            <div class="correct">Correct Answer: Deployment Pipelines (Premium)</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which tool allows deployment pipelines in Power BI?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question31">
+        <strong>Question 32:</strong> Which export formats are supported from Power BI Service?
+        <ul class="choices" id="choices31">
+            <li><label><input type="radio" name="q31" value="PDF and DOCX"> PDF and DOCX</label></li><li><label><input type="radio" name="q31" value="CSV only"> CSV only</label></li><li><label><input type="radio" name="q31" value="Excel and HTML"> Excel and HTML</label></li><li><label><input type="radio" name="q31" value="PDF and PowerPoint"> PDF and PowerPoint</label></li>
+        </ul>
+        <button class="submit-btn" data-question="31" data-answer="PDF and PowerPoint">Submit</button>
+        <div id="answer31" class="hidden">
+            <div class="correct">Correct Answer: PDF and PowerPoint</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which export formats are supported from Power BI Service?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question32">
+        <strong>Question 33:</strong> What license is required to share content via app to others in organization?
+        <ul class="choices" id="choices32">
+            <li><label><input type="radio" name="q32" value="Admin only"> Admin only</label></li><li><label><input type="radio" name="q32" value="Free license"> Free license</label></li><li><label><input type="radio" name="q32" value="Viewer only"> Viewer only</label></li><li><label><input type="radio" name="q32" value="Pro or Premium per User"> Pro or Premium per User</label></li>
+        </ul>
+        <button class="submit-btn" data-question="32" data-answer="Pro or Premium per User">Submit</button>
+        <div id="answer32" class="hidden">
+            <div class="correct">Correct Answer: Pro or Premium per User</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What license is required to share content via app to others in organization?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question33">
+        <strong>Question 34:</strong> What happens if a user without a Pro license tries to access a shared report?
+        <ul class="choices" id="choices33">
+            <li><label><input type="radio" name="q33" value="They get access"> They get access</label></li><li><label><input type="radio" name="q33" value="They’re redirected to home"> They’re redirected to home</label></li><li><label><input type="radio" name="q33" value="They are prompted to get a Pro license"> They are prompted to get a Pro license</label></li><li><label><input type="radio" name="q33" value="They must create a new report"> They must create a new report</label></li>
+        </ul>
+        <button class="submit-btn" data-question="33" data-answer="They are prompted to get a Pro license">Submit</button>
+        <div id="answer33" class="hidden">
+            <div class="correct">Correct Answer: They are prompted to get a Pro license</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What happens if a user without a Pro license tries to access a shared report?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question34">
+        <strong>Question 35:</strong> What is required to use a Power BI Gateway?
+        <ul class="choices" id="choices34">
+            <li><label><input type="radio" name="q34" value="Premium workspace needed"> Premium workspace needed</label></li><li><label><input type="radio" name="q34" value="Cloud refresh enabled"> Cloud refresh enabled</label></li><li><label><input type="radio" name="q34" value="Publish gateway report"> Publish gateway report</label></li><li><label><input type="radio" name="q34" value="Gateway software must be installed and running on-premises"> Gateway software must be installed and running on-premises</label></li>
+        </ul>
+        <button class="submit-btn" data-question="34" data-answer="Gateway software must be installed and running on-premises">Submit</button>
+        <div id="answer34" class="hidden">
+            <div class="correct">Correct Answer: Gateway software must be installed and running on-premises</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What is required to use a Power BI Gateway?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question35">
+        <strong>Question 36:</strong> Which view in Power BI Desktop is used to manage relationships?
+        <ul class="choices" id="choices35">
+            <li><label><input type="radio" name="q35" value="Data view"> Data view</label></li><li><label><input type="radio" name="q35" value="Dashboard"> Dashboard</label></li><li><label><input type="radio" name="q35" value="Model view"> Model view</label></li><li><label><input type="radio" name="q35" value="Report view"> Report view</label></li>
+        </ul>
+        <button class="submit-btn" data-question="35" data-answer="Model view">Submit</button>
+        <div id="answer35" class="hidden">
+            <div class="correct">Correct Answer: Model view</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which view in Power BI Desktop is used to manage relationships?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question36">
+        <strong>Question 37:</strong> Which tab allows you to add new measures in Power BI Desktop?
+        <ul class="choices" id="choices36">
+            <li><label><input type="radio" name="q36" value="Insert"> Insert</label></li><li><label><input type="radio" name="q36" value="Visualizations"> Visualizations</label></li><li><label><input type="radio" name="q36" value="Modeling"> Modeling</label></li><li><label><input type="radio" name="q36" value="Home"> Home</label></li>
+        </ul>
+        <button class="submit-btn" data-question="36" data-answer="Modeling">Submit</button>
+        <div id="answer36" class="hidden">
+            <div class="correct">Correct Answer: Modeling</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which tab allows you to add new measures in Power BI Desktop?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question37">
+        <strong>Question 38:</strong> Which DAX function filters a table based on conditions?
+        <ul class="choices" id="choices37">
+            <li><label><input type="radio" name="q37" value="DISTINCT"> DISTINCT</label></li><li><label><input type="radio" name="q37" value="CALCULATE"> CALCULATE</label></li><li><label><input type="radio" name="q37" value="SUMX"> SUMX</label></li><li><label><input type="radio" name="q37" value="FILTER"> FILTER</label></li>
+        </ul>
+        <button class="submit-btn" data-question="37" data-answer="FILTER">Submit</button>
+        <div id="answer37" class="hidden">
+            <div class="correct">Correct Answer: FILTER</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which DAX function filters a table based on conditions?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question38">
+        <strong>Question 39:</strong> What happens if a relationship is set to &#x27;Both&#x27; in cross-filter direction?
+        <ul class="choices" id="choices38">
+            <li><label><input type="radio" name="q38" value="Single-direction only"> Single-direction only</label></li><li><label><input type="radio" name="q38" value="Filter fails"> Filter fails</label></li><li><label><input type="radio" name="q38" value="Visual error"> Visual error</label></li><li><label><input type="radio" name="q38" value="Filters propagate in both directions"> Filters propagate in both directions</label></li>
+        </ul>
+        <button class="submit-btn" data-question="38" data-answer="Filters propagate in both directions">Submit</button>
+        <div id="answer38" class="hidden">
+            <div class="correct">Correct Answer: Filters propagate in both directions</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What happens if a relationship is set to &#x27;Both&#x27; in cross-filter direction?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question39">
+        <strong>Question 40:</strong> Which type of join shows all rows from left and matching from right?
+        <ul class="choices" id="choices39">
+            <li><label><input type="radio" name="q39" value="Inner Join"> Inner Join</label></li><li><label><input type="radio" name="q39" value="Full Join"> Full Join</label></li><li><label><input type="radio" name="q39" value="Right Join"> Right Join</label></li><li><label><input type="radio" name="q39" value="Left Outer Join"> Left Outer Join</label></li>
+        </ul>
+        <button class="submit-btn" data-question="39" data-answer="Left Outer Join">Submit</button>
+        <div id="answer39" class="hidden">
+            <div class="correct">Correct Answer: Left Outer Join</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which type of join shows all rows from left and matching from right?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question40">
+        <strong>Question 41:</strong> What is the difference between measure and calculated column?
+        <ul class="choices" id="choices40">
+            <li><label><input type="radio" name="q40" value="Measures evaluate on context; columns store row-level results"> Measures evaluate on context; columns store row-level results</label></li><li><label><input type="radio" name="q40" value="Columns calculate faster"> Columns calculate faster</label></li><li><label><input type="radio" name="q40" value="Measures store in memory"> Measures store in memory</label></li><li><label><input type="radio" name="q40" value="Columns can use slicers"> Columns can use slicers</label></li>
+        </ul>
+        <button class="submit-btn" data-question="40" data-answer="Measures evaluate on context; columns store row-level results">Submit</button>
+        <div id="answer40" class="hidden">
+            <div class="correct">Correct Answer: Measures evaluate on context; columns store row-level results</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What is the difference between measure and calculated column?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question41">
+        <strong>Question 42:</strong> What must you do before using time intelligence functions like TOTALYTD?
+        <ul class="choices" id="choices41">
+            <li><label><input type="radio" name="q41" value="Use a KPI"> Use a KPI</label></li><li><label><input type="radio" name="q41" value="Enable auto date/time"> Enable auto date/time</label></li><li><label><input type="radio" name="q41" value="Activate calendar visual"> Activate calendar visual</label></li><li><label><input type="radio" name="q41" value="Create and mark a Date table"> Create and mark a Date table</label></li>
+        </ul>
+        <button class="submit-btn" data-question="41" data-answer="Create and mark a Date table">Submit</button>
+        <div id="answer41" class="hidden">
+            <div class="correct">Correct Answer: Create and mark a Date table</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What must you do before using time intelligence functions like TOTALYTD?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question42">
+        <strong>Question 43:</strong> What pane in Power BI Service shows scheduled refresh status?
+        <ul class="choices" id="choices42">
+            <li><label><input type="radio" name="q42" value="Sidebar"> Sidebar</label></li><li><label><input type="radio" name="q42" value="Dashboard"> Dashboard</label></li><li><label><input type="radio" name="q42" value="Dataset settings"> Dataset settings</label></li><li><label><input type="radio" name="q42" value="Navigation pane"> Navigation pane</label></li>
+        </ul>
+        <button class="submit-btn" data-question="42" data-answer="Dataset settings">Submit</button>
+        <div id="answer42" class="hidden">
+            <div class="correct">Correct Answer: Dataset settings</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What pane in Power BI Service shows scheduled refresh status?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question43">
+        <strong>Question 44:</strong> Which DAX function calculates year-over-year growth?
+        <ul class="choices" id="choices43">
+            <li><label><input type="radio" name="q43" value="SAMEPERIODLASTYEAR"> SAMEPERIODLASTYEAR</label></li><li><label><input type="radio" name="q43" value="TOTALYTD"> TOTALYTD</label></li><li><label><input type="radio" name="q43" value="DATESYTD"> DATESYTD</label></li><li><label><input type="radio" name="q43" value="PARALLELPERIOD"> PARALLELPERIOD</label></li>
+        </ul>
+        <button class="submit-btn" data-question="43" data-answer="SAMEPERIODLASTYEAR">Submit</button>
+        <div id="answer43" class="hidden">
+            <div class="correct">Correct Answer: SAMEPERIODLASTYEAR</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which DAX function calculates year-over-year growth?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question44">
+        <strong>Question 45:</strong> Which visual displays hierarchical data in nested rectangles?
+        <ul class="choices" id="choices44">
+            <li><label><input type="radio" name="q44" value="Line Chart"> Line Chart</label></li><li><label><input type="radio" name="q44" value="Donut Chart"> Donut Chart</label></li><li><label><input type="radio" name="q44" value="Matrix"> Matrix</label></li><li><label><input type="radio" name="q44" value="Treemap"> Treemap</label></li>
+        </ul>
+        <button class="submit-btn" data-question="44" data-answer="Treemap">Submit</button>
+        <div id="answer44" class="hidden">
+            <div class="correct">Correct Answer: Treemap</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which visual displays hierarchical data in nested rectangles?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question45">
+        <strong>Question 46:</strong> What visual best shows part-to-whole relationships?
+        <ul class="choices" id="choices45">
+            <li><label><input type="radio" name="q45" value="Donut Chart"> Donut Chart</label></li><li><label><input type="radio" name="q45" value="Card"> Card</label></li><li><label><input type="radio" name="q45" value="Bar Chart"> Bar Chart</label></li><li><label><input type="radio" name="q45" value="Area Chart"> Area Chart</label></li>
+        </ul>
+        <button class="submit-btn" data-question="45" data-answer="Donut Chart">Submit</button>
+        <div id="answer45" class="hidden">
+            <div class="correct">Correct Answer: Donut Chart</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What visual best shows part-to-whole relationships?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question46">
+        <strong>Question 47:</strong> Which Power BI feature combines dashboards, reports, and datasets?
+        <ul class="choices" id="choices46">
+            <li><label><input type="radio" name="q46" value="Apps"> Apps</label></li><li><label><input type="radio" name="q46" value="Reports only"> Reports only</label></li><li><label><input type="radio" name="q46" value="Tiles"> Tiles</label></li><li><label><input type="radio" name="q46" value="Datasets only"> Datasets only</label></li>
+        </ul>
+        <button class="submit-btn" data-question="46" data-answer="Apps">Submit</button>
+        <div id="answer46" class="hidden">
+            <div class="correct">Correct Answer: Apps</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which Power BI feature combines dashboards, reports, and datasets?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question47">
+        <strong>Question 48:</strong> Which Power BI workspace type allows versioning and test environments?
+        <ul class="choices" id="choices47">
+            <li><label><input type="radio" name="q47" value="Classic workspace"> Classic workspace</label></li><li><label><input type="radio" name="q47" value="Deployment Pipeline Workspace"> Deployment Pipeline Workspace</label></li><li><label><input type="radio" name="q47" value="Team channel"> Team channel</label></li><li><label><input type="radio" name="q47" value="Standard Workspace"> Standard Workspace</label></li>
+        </ul>
+        <button class="submit-btn" data-question="47" data-answer="Deployment Pipeline Workspace">Submit</button>
+        <div id="answer47" class="hidden">
+            <div class="correct">Correct Answer: Deployment Pipeline Workspace</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;Which Power BI workspace type allows versioning and test environments?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div class="question" id="question48">
+        <strong>Question 49:</strong> What is required to view a report in the Power BI mobile app?
+        <ul class="choices" id="choices48">
+            <li><label><input type="radio" name="q48" value="It must be a paginated report"> It must be a paginated report</label></li><li><label><input type="radio" name="q48" value="The report must be published to Power BI Service"> The report must be published to Power BI Service</label></li><li><label><input type="radio" name="q48" value="It must be opened in Excel"> It must be opened in Excel</label></li><li><label><input type="radio" name="q48" value="It must be shared via OneDrive"> It must be shared via OneDrive</label></li>
+        </ul>
+        <button class="submit-btn" data-question="48" data-answer="The report must be published to Power BI Service">Submit</button>
+        <div id="answer48" class="hidden">
+            <div class="correct">Correct Answer: The report must be published to Power BI Service</div>
+            <div class="explanation">This is the best option based on PL-300 functionality related to: &#x27;What is required to view a report in the Power BI mobile app?&#x27;</div>
+        </div>
+        <hr>
+    </div>
+    
+    <div id="score-summary"></div>
+    <script>
+        let correctAnswers = 0;
+        let answeredQuestions = 0;
+        const totalQuestions = 49;
+
+        document.querySelectorAll('.submit-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const idx = this.getAttribute('data-question');
+                const correctAnswer = this.getAttribute('data-answer');
+                const radios = document.getElementsByName('q' + idx);
+                let selected = null;
+                for (const radio of radios) {
+                    if (radio.checked) {
+                        selected = radio.value;
+                        break;
+                    }
+                }
+                if (!selected) {
+                    alert("Please select an answer.");
+                    return;
+                }
+
+                const listItems = document.getElementById('choices' + idx).getElementsByTagName('li');
+                for (const li of listItems) {
+                    const input = li.querySelector('input');
+                    input.disabled = true;
+                    if (input.value === correctAnswer) {
+                        li.style.color = "green";
+                    } else if (input.checked && input.value !== correctAnswer) {
+                        li.style.color = "red";
+                    }
+                }
+
+                if (selected === correctAnswer) {
+                    correctAnswers++;
+                }
+                answeredQuestions++;
+                document.getElementById('answer' + idx).classList.remove('hidden');
+                this.disabled = true;
+
+                if (answeredQuestions === totalQuestions) {
+                    const percent = Math.round((correctAnswers / totalQuestions) * 100);
+                    const summary = 'You got ' + correctAnswers + ' out of ' + totalQuestions + ' correct (' + percent + '%).';
+                    document.getElementById('score-summary').innerText = summary;
+                    document.getElementById('score-summary').style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
